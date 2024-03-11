@@ -19,7 +19,7 @@ function Cart({ cart, removeFromCart, emptyCart }) {
               {item.size ? (
                 <span className="item-size">{item.size}</span>
               ) : (
-                <span className="item-size-empty"></span> // This ensures the grid layout maintains its structure
+                <span className="item-size-empty">Size:</span> // This ensures the grid layout maintains its structure
               )}
               <span className="item-quantity">Quantity: {item.quantity}</span>
               <span className="item-price">Price: ${(item.price * item.quantity).toFixed(2)}</span>
