@@ -73,6 +73,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    order: 2;
     margin-left: auto; /* Push the cart button to the right */
   }
   
