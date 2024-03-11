@@ -1,0 +1,12 @@
+.site-header {
+    background: #fff; /* Or any other color that matches your theme */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    height: 50px; /* Adjust size as needed */
+  }
+  
