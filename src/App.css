@@ -36,6 +36,13 @@ body, html {
   gap: 1rem;
 }
 
+.products-header {
+  display: flex;
+  justify-content: space-between; /* Aligns children (filter, sort, cart) on both ends */
+  padding: 1rem; /* Adjust as necessary */
+  align-items: center; /* Aligns items vertically */
+}
+
 .product {
   border: 1px solid #ddd;
   padding: 1rem;
@@ -173,6 +180,11 @@ body, html {
 
 .close-cart-btn:hover {
   background-color: darkred; 
+}
+
+.cart-button-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .cart-button {
