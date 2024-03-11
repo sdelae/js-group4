@@ -15,10 +15,14 @@
   background-color: #0056b3;
 } 
   
-  .select-filter {
+ .dropdown {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+  }
+
+  .dropdown .size {
+    margin-right: 2px;
   }
   
   .products-container {

@@ -137,7 +137,7 @@ const handleAddToCart = (product) => {
         <div className="header-controls">
           <div className="filter-sort-section">
             <span>Filter:</span>
-            <select onChange={handleCategoryChange} value={categoryFilter} className="select-filter">
+            <select onChange={handleCategoryChange} value={categoryFilter} className="dropdown category">
             <option value="all">All</option>
             <option value="sweaters">Sweaters</option>
             <option value="hats">Hats</option>
@@ -145,7 +145,7 @@ const handleAddToCart = (product) => {
             <option value="shirts">Shirts</option>
             </select>
             <span>Sort:</span>
-            <select onChange={handleSortChange} value={sortType} className="select-filter">
+            <select onChange={handleSortChange} value={sortType} className="dropdown sort">
             <option value="">Default</option>
             <option value="priceLowHigh">Price: Low to High</option>
             <option value="priceHighLow">Price: High to Low</option>

@@ -13,7 +13,7 @@ function ProductList({ addToCart, inventory, selectedSizes, handleSizeChange, ha
               <select 
                 value={selectedSizes[product.id] || ''} 
                 onChange={(e) => handleSizeChange(product.id, e.target.value)}
-                className="select-filter"
+                className="dropdown size"
               >
                 <option value="">Select size</option>
                 <option value="Small">Small</option>
@@ -40,4 +40,3 @@ function ProductList({ addToCart, inventory, selectedSizes, handleSizeChange, ha
 }
 
 export default ProductList;
-
