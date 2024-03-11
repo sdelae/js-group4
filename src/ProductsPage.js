@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ProductList from './ProductList';
 import Cart from './cart';
 import Header from './Header';
-import './ProductsPage.css';
+import './App.css';
 
 const rainbowOrder = {
   Red: 1,
