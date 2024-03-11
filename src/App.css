@@ -141,6 +141,8 @@ body, html {
   background-color: #dc3545;
   color: white;
   border-radius: 4px;
+  align-self: flex-start; 
+  margin-top: auto;
 }
 
 .remove-btn {
@@ -155,14 +157,14 @@ body, html {
   cursor: pointer;
   border-radius: 4px;
   color: white;
-  background-color: #007bff; /* Bootstrap primary color for example */
-  text-transform: uppercase; /* Optional: if you want all button text to be uppercase */
+  background-color: lightgray;
+  text-transform: uppercase; 
 }
 
 .button:hover {
-  background-color: #0056b3; /* A darker shade for the hover state */
+  background-color: darkgray; 
 }
 
-.close-cart-btn {
-  background-color: #dc3545; 
+.close-cart-btn:hover {
+  background-color: darkred; 
 }
