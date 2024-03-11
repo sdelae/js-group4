@@ -160,8 +160,9 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 40%; /* You can adjust the width as needed */
-  height: 100vh; /* Set height to full view height */
+  width: 50%; /* Extend to half of the container's width */
+  max-width: none; /* Remove any max-width if set */
+  height: 100vh; /* Keep it full height */
   background: white;
   box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
   z-index: 1000;
