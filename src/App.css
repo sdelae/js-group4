@@ -160,8 +160,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 30%; /* You can adjust the width as needed */
-  max-width: 400px; /* Optional: you can set a max-width */
+  width: 40%; /* You can adjust the width as needed */
   height: 100vh; /* Set height to full view height */
   background: white;
   box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
