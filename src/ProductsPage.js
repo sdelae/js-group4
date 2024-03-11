@@ -107,11 +107,16 @@ const ProductsPage = () => {
   };
 
   const handleAddToCart = (product) => {
-    const size = selectedSizes[product.id]; // Assumes selectedSizes tracks size per product ID
-    if (size) {
-      addToCart({ ...product, size });
+    if (product.category === 'sweaters' || product.category === 'shirts') {
+      const size = selectedSizes[product.id];
+      if (size) {
+        addToCart({ ...product, size });
+      } else {
+        alert('Please select a size');
+      }
     } else {
-      alert('Please select a size');
+      // For items that don't require a size, add to cart without size
+      addToCart(product);
     }
   };
 
@@ -158,7 +163,7 @@ const ProductsPage = () => {
         </>
       )}
 <ProductList 
-  addToCart={handleAddToCart} // Use handleAddToCart instead of addToCart
+  addToCart={handleAddToCart} // Now passing the correct function
   inventory={sortedInventory}
   selectedSizes={selectedSizes}
   handleSizeChange={handleSizeChange}
