@@ -79,8 +79,9 @@
 
 .item-name {
   font-weight: bold;
-  /* Other styles */
+  flex: 1; /* Takes up remaining space */
 }
+
 
 /* Overlay */
 .overlay {
@@ -114,12 +115,11 @@
 
 .cart-item {
   display: flex;
-  justify-content: space-between; /* Adjust the layout to your preference */
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
   margin-bottom: 10px;
   background: #f7f7f7;
-  /* Other styles */
 }
 
 
@@ -167,10 +167,8 @@
 
 .cart-actions {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  /* Other styles */
+  justify-content: flex-end;
+  gap: 10px; /* Adjust as needed */
 }
 
 .empty-cart-btn, .close-cart-btn {
@@ -181,12 +179,20 @@
 }
 
 .item-details {
-  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* Three columns for size, quantity, price */
+  gap: 10px; /* Space between columns */
+  align-items: center;
 }
 
 .cart-summary {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* rest of your styles */
+  margin-top: 1rem; /* Adjust as needed */
+}
+
+.cart-summary .total-price {
+  font-weight: bold;
+  margin-right: auto; /* Pushes everything to the right */
 }
