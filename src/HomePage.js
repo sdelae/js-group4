@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <div className="home-container">
       <header className="home-header">
-        <img src="/logo_e-commerce.png" alt="Logo" className="home-logo" />
+        <img src="logo_e-commerce.png" alt="Logo" className="home-logo" />
         <h1>Welcome to Woven</h1>
       </header>
       <section className="home-about">
