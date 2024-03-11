@@ -96,7 +96,7 @@ body, html {
   flex-direction: column;
   justify-content: space-between; /* Spread out content */
   padding: 20px;
-  padding-bottom: 60px; /* Add more padding to the bottom */
+  padding-bottom: 100px; /* Add more padding to the bottom */
   transform: translateX(100%);
   transition: transform 0.3s ease-out;
 }
@@ -150,7 +150,7 @@ body, html {
   border-radius: 4px;
   padding: 10px 20px;
   margin-top: auto; /* Pushes button to the bottom */
-  margin-bottom: 20px; /* Adds space at the bottom */
+  margin-bottom: 40px; /* Adds space at the bottom */
   align-self: center; /* Aligns the button to the center */
 }
 
