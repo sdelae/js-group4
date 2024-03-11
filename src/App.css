@@ -77,6 +77,22 @@
   background-color: #0056b3; /* Darker button color on hover */
 }
 
+.item-name {
+  font-weight: bold;
+  /* Other styles */
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
 .cart-container {
   margin-top: 2rem;
 }
@@ -98,7 +114,7 @@
 
 .cart-item {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Adjust the layout to your preference */
   align-items: center;
   padding: 10px;
   margin-bottom: 10px;
@@ -106,21 +122,6 @@
   /* Other styles */
 }
 
-.item-name {
-  font-weight: bold;
-  /* Other styles */
-}
-
-/* Overlay */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-}
 
 /* Cart Popup */
 .cart-popup {
@@ -162,4 +163,19 @@
 .cart-title {
   font-weight: bold;
   margin-bottom: 15px;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  /* Other styles */
+}
+
+.empty-cart-btn, .close-cart-btn {
+  /* Shared styles for both buttons */
+  padding: 10px;
+  border: none;
+  cursor: pointer;
 }
