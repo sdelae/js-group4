@@ -85,10 +85,11 @@
   margin: 0 10px;
 }
 
-.total-price {
-  font-weight: bold;
+.cart-total {
+  /* Styles for the total price container */
+  text-align: right;
+  margin-top: 1em;
 }
-
 
 .cart-list {
   list-style: none; /* Removes default list styling */
@@ -152,18 +153,6 @@
   cursor: pointer;
 }
 
-.cart-item {
-  display: flex;
-  justify-content: space-between; /* This spreads out the flex items */
-  align-items: center; /* This centers items vertically */
-  padding: 0.5rem;
-  border-bottom: 1px solid #ccc;
-}
-
-.cart-item span {
-  margin-right: 1rem; /* Gives some space between the text and the button */
-}
-
 .cart-item button {
   flex: 0 0 auto; /* Do not grow or shrink */
   margin-left: 10px; /* Add space between the button and the preceding text */
@@ -173,12 +162,4 @@
 .cart-title {
   font-weight: bold;
   margin-bottom: 15px;
-}
-
-.cart-total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  font-weight: bold;
 }
