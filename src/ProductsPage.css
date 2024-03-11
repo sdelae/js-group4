@@ -12,13 +12,18 @@
 }
 
 .cart-button {
-  cursor: pointer;
-  background: none;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
   border: none;
-  font-size: 1rem; /* Adjust font size as needed */
-  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: auto; /* Push the cart button to the right */
 }
-  
+
+.cart-button:hover {
+  background-color: #0056b3;
+} 
   
   .select-filter {
     padding: 5px;
