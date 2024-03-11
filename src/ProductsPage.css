@@ -121,7 +121,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 350px; /* Adjust width as needed */
+    width: 50%;
     height: 100%;
     background: white;
     box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
