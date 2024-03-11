@@ -12,26 +12,24 @@ function Cart({ cart, removeFromCart, emptyCart, toggleCart }) {
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <>
-          <div className="cart-items">
-            {cart.map((item) => (
-              <div key={`${item.id}_${item.size || 'default'}`} className="cart-item">
+        <div>
+          {cart.map((item) => (
+            <div key={`${item.id}_${item.size || 'default'}`} className="cart-item">
+              <div className="item-details">
                 <span>{item.name}</span>
                 {item.size && <span>Size: {item.size}</span>}
                 <span>Quantity: {item.quantity}</span>
                 <span>Price: ${(item.price * item.quantity).toFixed(2)}</span>
-                <button onClick={() => removeFromCart(item.id, item.size)}>Remove</button>
               </div>
-            ))}
-          </div>
-          <div className="cart-total">
-            <span>Total: ${totalPrice}</span>
-          </div>
-          <div className="cart-actions">
+              <button onClick={() => removeFromCart(item.id, item.size)} className="remove-btn">Remove</button>
+            </div>
+          ))}
+          <div className="cart-summary">
+            <span className="total-price">Total: ${totalPrice}</span>
             <button onClick={emptyCart} className="empty-cart-btn">Empty Cart</button>
-            <button onClick={toggleCart} className="close-cart-btn">Close</button>
           </div>
-        </>
+          <button onClick={toggleCart} className="close-cart-btn">Close</button>
+        </div>
       )}
     </div>
   );

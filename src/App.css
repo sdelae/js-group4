@@ -179,3 +179,14 @@
   border: none;
   cursor: pointer;
 }
+
+.item-details {
+  flex-grow: 1;
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* rest of your styles */
+}
