@@ -91,14 +91,15 @@ body, html {
   height: 100vh;
   background: white;
   box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
-  z-index: 100;
+  z-index: 1000;
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  justify-content: space-between; /* Separate the cart items and close button */
+  flex-direction: column;
+  justify-content: space-between; /* Spread out content */
   padding: 20px;
+  padding-bottom: 60px; /* Add more padding to the bottom */
   transform: translateX(100%);
   transition: transform 0.3s ease-out;
-  }
+}
 
 .cart-popup.visible {
   transform: translateX(0);
@@ -142,16 +143,15 @@ body, html {
 }
 
 .close-cart-btn {
-  padding: 10px 20px;
   background-color: #dc3545;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 4px;
-  align-self: flex-end; 
-  margin-top: auto; 
-  margin-bottom: 10px; 
-  text-transform: uppercase;
+  padding: 10px 20px;
+  margin-top: auto; /* Pushes button to the bottom */
+  margin-bottom: 20px; /* Adds space at the bottom */
+  align-self: center; /* Aligns the button to the center */
 }
 
 .remove-btn {
