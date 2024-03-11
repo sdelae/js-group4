@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ProductList from './ProductList';
 import Cart from './cart';
 import Header from './Header';
-import './ProductPage.css';
+import './ProductsPage.css';
 
 const rainbowOrder = {
   Red: 1,
@@ -106,24 +106,15 @@ const ProductsPage = () => {
     setSelectedSizes(prev => ({ ...prev, [productId]: size }));
   };
 
-const handleAddToCart = (product) => {
-  // Check if the product category requires a size selection
-  const requiresSize = ['sweaters', 'shirts'].includes(product.category);
+  const handleAddToCart = (product) => {
+    const size = selectedSizes[product.id]; // Assumes selectedSizes tracks size per product ID
+    if (size) {
+      addToCart({ ...product, size });
+    } else {
+      alert('Please select a size');
+    }
+  };
 
-  // If it doesn't require a size or if a size has been selected, proceed to add to cart
-  if (!requiresSize || selectedSizes[product.id]) {
-    addToCart({
-      ...product,
-      // Add the size to the product only if it's required and selected
-      ...(requiresSize && { size: selectedSizes[product.id] })
-    });
-  } else if (requiresSize && !selectedSizes[product.id]) {
-    // If a size is required but not selected, alert the user
-    alert('Please select a size');
-  }
-};
-
-  
   const filteredInventory = categoryFilter === 'all'
     ? inventory
     : inventory.filter((item) => item.category === categoryFilter);
@@ -160,14 +151,14 @@ const handleAddToCart = (product) => {
       {isCartVisible && (
         <>
           <div className="overlay" onClick={toggleCart}></div>
-          <div className={`cart-popup ${isCartVisible ? 'visible' : ''}`}>
-            <Cart cart={cart} className="empty-cart-btn" removeFromCart={removeFromCart} emptyCart={emptyCart} />
+          <div className="cart-popup visible">
+            <Cart cart={cart} removeFromCart={removeFromCart} emptyCart={emptyCart} />
             <button onClick={toggleCart} className="close">Close</button>
           </div>
         </>
       )}
 <ProductList 
-  addToCart={handleAddToCart} // Now passing the correct function
+  addToCart={handleAddToCart} // Use handleAddToCart instead of addToCart
   inventory={sortedInventory}
   selectedSizes={selectedSizes}
   handleSizeChange={handleSizeChange}

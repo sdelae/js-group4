@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ProductList from './ProductList';
 import Cart from './cart';
 import Header from './Header';
-import './ProductPage.css';
+import './App.css';
 
 const rainbowOrder = {
   Red: 1,
@@ -160,7 +160,7 @@ const handleAddToCart = (product) => {
       {isCartVisible && (
         <>
           <div className="overlay" onClick={toggleCart}></div>
-          <div className={`cart-popup ${isCartVisible ? 'visible' : ''}`}>
+          <div className="cart-popup visible">
             <Cart cart={cart} className="empty-cart-btn" removeFromCart={removeFromCart} emptyCart={emptyCart} />
             <button onClick={toggleCart} className="close">Close</button>
           </div>
