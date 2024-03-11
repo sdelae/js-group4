@@ -107,19 +107,21 @@ const ProductsPage = () => {
   };
 
   const handleAddToCart = (product) => {
-    if (product.category === 'sweaters' || product.category === 'shirts') {
-      const size = selectedSizes[product.id];
-      if (size) {
-        addToCart({ ...product, size });
-      } else {
-        alert('Please select a size');
-      }
+    // Check if the product category requires a size selection
+    const requiresSize = product.category === 'sweaters' || product.category === 'shirts';
+  
+    // If it requires a size and none is selected, alert the user.
+    // Otherwise, add the product to the cart.
+    if (!requiresSize || (requiresSize && selectedSizes[product.id])) {
+      addToCart({
+        ...product,
+        size: requiresSize ? selectedSizes[product.id] : undefined
+      });
     } else {
-      // For items that don't require a size, add to cart without size
-      addToCart(product);
+      alert('Please select a size');
     }
   };
-
+  
   const filteredInventory = categoryFilter === 'all'
     ? inventory
     : inventory.filter((item) => item.category === categoryFilter);
