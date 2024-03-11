@@ -39,34 +39,33 @@
 
 .products-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Creates a 4-column layout */
-  gap: 1rem; /* Adjust the gap to your preference */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 }
 
 .product {
-  border: 1px solid #ddd; /* Adds a border to each product */
-  padding: 1rem; /* Adjust the padding to your preference */
-  text-align: center; /* Centers the text */
-  /* You might want to add more styling here */
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
 }
 
 .product img {
-  width: auto; /* Keep the image's aspect ratio */
-  height: 200px; /* Fixed height for all images */
-  object-fit: contain; /* Ensures the entire image fits, may result in letterboxing */
+  width: auto;
+  height: 200px;
+  object-fit: contain;
 }
 
 .product h3 {
-  margin: 0.5rem 0; /* Space above and below the product name */
+  margin: 0.5rem 0;
 }
 
 .product p {
-  margin: 0.5rem 0; /* Space above and below the price */
+  margin: 0.5rem 0;
 }
 
 .product button {
-  padding: 0.5rem 1rem; /* Padding within the button */
-  background-color: #007bff; /* Example button color */
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
@@ -74,7 +73,7 @@
 }
 
 .product button:hover {
-  background-color: #0056b3; /* Darker button color on hover */
+  background-color: #0056b3;
 }
 
 .overlay {
@@ -87,11 +86,14 @@
   z-index: 999;
 }
 
+.cart-container {
+  margin-top: 2rem;
+}
+
 .cart-item {
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr auto; /* Adjust as needed for name, size, quantity, price, and remove button */
+  grid-template-columns: 2fr repeat(3, 1fr) auto;
   align-items: center;
-  gap: 10px;
   padding: 10px;
   border-bottom: 1px solid #eee;
 }
@@ -100,49 +102,33 @@
   margin: 0;
 }
 
+.cart-item .item-name {
+  justify-self: start;
+}
+
+.cart-item .item-details {
+  display: contents;
+}
+
+.cart-item .item-size, 
+.cart-item .item-quantity, 
+.cart-item .item-price {
+  justify-self: center;
+}
+
 .cart-item button {
   justify-self: end;
 }
 
-.item-details {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  align-items: center;
-}
-
-/* Styles for the name of the item, aligned to the left */
-.item-name {
-  font-weight: bold;
-  flex-grow: 1;
-  text-align: left;
-}
-
-/* Styling for each part of the item description (size, quantity, price) */
-.item-description {
-  display: grid;
-  grid-template-columns: repeat(3, auto); /* for label: value pairs */
-  gap: 5px; /* Adjust gap to your preference */
-}
-
-/* This class is for the text labels of Size, Quantity, and Price */
-.description-label {
-  font-weight: bold;
-  margin-bottom: 4px; /* Space between the label and the value */
-}
-
 .cart-summary {
-  display: grid;
-  grid-template-columns: auto 1fr auto; /* for total label, empty space, and button */
+  display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-  font-size: 1.2em;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 1px solid #eee;
 }
 
-/* Style for the total price label and amount */
-.total-price {
-  grid-column: 1;
+.cart-summary .total-price {
   font-weight: bold;
 }
 
@@ -152,51 +138,45 @@
   gap: 10px;
 }
 
+/* .cart-actions {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: end;
+  gap: 10px;
+  margin-top: 1em;
+} */
+
 .cart-summary .empty-cart-btn {
-  padding: 10px 20px; /* Add more padding for better appearance */
-  margin-left: auto; /* Push the button to the right */
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: auto; /* Pushes the button to the right */
+}
+
+.cart-popup .close {
+  display: block; /* Show this close button */
 }
 
 .close-cart-btn {
   padding: 10px;
-  background-color: #6c757d; /* Bootstrap's secondary color for example */
+  background-color: #dc3545; /* Bootstrap's danger color for example */
   color: white;
   border: none;
   border-radius: 4px;
-}
-
-/* Close Button - Only one is needed, so we make sure to target it specifically */
-.cart-popup .close {
-  background: #ff0000; /* Red color to make it stand out as a close button */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
   cursor: pointer;
-  align-self: flex-end; /* Aligns the close button to the right */
-  margin-bottom: 10px; /* Space below the close button */
-}
-
-/* Remove Button Styling */
-.remove-btn {
-  background-color: #ffc107; /* Bootstrap's warning color for example */
-  color: black;
-  border: none;
-  border-radius: 4px;
-  padding: 6px 12px;
-  cursor: pointer;
-  flex-shrink: 0; /* Ensures that the button doesn't shrink */
   justify-self: end;
-}
-
-.total-and-empty {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 10px;
 }
 
-.empty-cart-btn {
-  grid-column: 3;
-  justify-self: end; /* Align the button to the right */
+.cart-item .remove-btn {
+  justify-self: end; /* Aligns the button to the end of the grid area */
+  padding: 6px 12px;
+  background-color: #dc3545; /* Bootstrap's danger color for example */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
