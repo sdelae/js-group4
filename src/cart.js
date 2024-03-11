@@ -23,7 +23,7 @@ function Cart({ cart, removeFromCart, emptyCart }) {
               )}
               <span className="item-quantity">Quantity: {item.quantity}</span>
               <span className="item-price">Price: ${(item.price * item.quantity).toFixed(2)}</span>
-              <button onClick={() => removeFromCart(item.id, item.size)} className="remove-btn">
+              <button onClick={() => removeFromCart(item.id, item.size)} className="button remove-btn">
                 Remove
               </button>
             </div>
@@ -31,7 +31,7 @@ function Cart({ cart, removeFromCart, emptyCart }) {
           <div className="cart-summary">
             <span className="total-price">Total: ${totalPrice}</span>
             <div className="cart-actions">
-              <button onClick={emptyCart} className="empty-cart-btn">
+              <button onClick={emptyCart} className="button empty-cart-btn">
                 Empty Cart
               </button>
             </div>
