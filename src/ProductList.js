@@ -29,7 +29,9 @@ function ProductList({ addToCart, inventory, selectedSizes, handleSizeChange, ha
               </button>
             </div>
           ) : (
-            <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+            <button onClick={() => addToCart(product)}> 
+            Add to Cart
+          </button>
           )}
         </div>
       ))}

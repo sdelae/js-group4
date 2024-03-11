@@ -106,21 +106,23 @@ const ProductsPage = () => {
     setSelectedSizes(prev => ({ ...prev, [productId]: size }));
   };
 
-  const handleAddToCart = (product) => {
-    // Check if the product category requires a size selection
-    const requiresSize = product.category === 'sweaters' || product.category === 'shirts';
-  
-    // If it requires a size and none is selected, alert the user.
-    // Otherwise, add the product to the cart.
-    if (!requiresSize || (requiresSize && selectedSizes[product.id])) {
-      addToCart({
-        ...product,
-        size: requiresSize ? selectedSizes[product.id] : undefined
-      });
-    } else {
-      alert('Please select a size');
-    }
-  };
+const handleAddToCart = (product) => {
+  // Check if the product category requires a size selection
+  const requiresSize = ['sweaters', 'shirts'].includes(product.category);
+
+  // If it doesn't require a size or if a size has been selected, proceed to add to cart
+  if (!requiresSize || selectedSizes[product.id]) {
+    addToCart({
+      ...product,
+      // Add the size to the product only if it's required and selected
+      ...(requiresSize && { size: selectedSizes[product.id] })
+    });
+  } else if (requiresSize && !selectedSizes[product.id]) {
+    // If a size is required but not selected, alert the user
+    alert('Please select a size');
+  }
+};
+
   
   const filteredInventory = categoryFilter === 'all'
     ? inventory
