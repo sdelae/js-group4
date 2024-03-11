@@ -77,13 +77,6 @@
   background-color: #0056b3; /* Darker button color on hover */
 }
 
-.item-name {
-  font-weight: bold;
-  flex: 1; /* Takes up remaining space */
-}
-
-
-/* Overlay */
 .overlay {
   position: fixed;
   top: 0;
@@ -94,25 +87,9 @@
   z-index: 999;
 }
 
-.cart-container {
-  margin-top: 2rem;
-}
+/* ... previous styles ... */
 
-.cart-item span {
-  margin: 0 10px;
-}
-
-.cart-total {
-  /* Styles for the total price container */
-  text-align: right;
-  margin-top: 1em;
-}
-
-.cart-list {
-  list-style: none; /* Removes default list styling */
-  padding: 0; /* Removes default padding */
-}
-
+/* Cart Item Styling */
 .cart-item {
   display: flex;
   justify-content: space-between;
@@ -122,77 +99,88 @@
   background: #f7f7f7;
 }
 
-
-/* Cart Popup */
-.cart-popup {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 350px; /* Adjust width as needed */
-  height: 100%;
-  background: white;
-  box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  padding: 20px;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-out;
+.item-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  align-items: center;
 }
 
-/* Visible state */
-.cart-popup.visible {
-  transform: translateX(0);
+/* Styles for the name of the item, aligned to the left */
+.item-name {
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: left;
 }
 
-/* Close Button */
-.cart-popup button.close {
-  margin-top: 10px;
-  background: #ff0000; /* Choose a color that stands out */
+/* Styling for each part of the item description (size, quantity, price) */
+.item-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* This class is for the text labels of Size, Quantity, and Price */
+.description-label {
+  font-weight: bold;
+  margin-bottom: 4px; /* Space between the label and the value */
+}
+
+/* Cart Summary Styling */
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* Style for the total price label and amount */
+.total-price {
+  font-weight: bold;
+}
+
+/* Styling for the cart action buttons (Empty Cart, Close) */
+.cart-actions {
+  display: flex;
+  align-items: center;
+}
+
+.empty-cart-btn {
+  padding: 10px;
+  margin-right: 8px; /* Adjust the space between buttons */
+  background-color: #dc3545; /* Bootstrap's danger color for example */
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.close-cart-btn {
+  padding: 10px;
+  background-color: #6c757d; /* Bootstrap's secondary color for example */
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Close Button - Only one is needed, so we make sure to target it specifically */
+.cart-popup .close {
+  background: #ff0000; /* Red color to make it stand out as a close button */
   color: white;
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
+  align-self: flex-end; /* Aligns the close button to the right */
+  margin-bottom: 10px; /* Space below the close button */
 }
 
-.cart-item button {
-  flex: 0 0 auto; /* Do not grow or shrink */
-  margin-left: 10px; /* Add space between the button and the preceding text */
-}
-
-/* Title and Total */
-.cart-title {
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.cart-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px; /* Adjust as needed */
-}
-
-.empty-cart-btn, .close-cart-btn {
-  /* Shared styles for both buttons */
-  padding: 10px;
+/* Remove Button Styling */
+.remove-btn {
+  background-color: #ffc107; /* Bootstrap's warning color for example */
+  color: black;
   border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
   cursor: pointer;
-}
-
-.item-details {
-  display: grid;
-  grid-template-columns: repeat(3, auto); /* Three columns for size, quantity, price */
-  gap: 10px; /* Space between columns */
-  align-items: center;
-}
-
-.cart-summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem; /* Adjust as needed */
-}
-
-.cart-summary .total-price {
-  font-weight: bold;
-  margin-right: auto; /* Pushes everything to the right */
+  flex-shrink: 0; /* Ensures that the button doesn't shrink */
 }
