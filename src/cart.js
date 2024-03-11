@@ -16,15 +16,14 @@ function Cart({ cart, removeFromCart, emptyCart }) {
           {cart.map((item) => (
             <div key={`${item.id}_${item.size || 'default'}`} className="cart-item">
               <span className="item-name">{item.name}</span>
-              {item.size && (
-                <span className="item-size">Size: {item.size}</span>
+              {item.size ? (
+                <span className="item-size">{item.size}</span>
+              ) : (
+                <span className="item-size-empty"></span> // This ensures the grid layout maintains its structure
               )}
               <span className="item-quantity">Quantity: {item.quantity}</span>
-              <span className="item-price">Price: ${item.price.toFixed(2)}</span>
-              <button 
-                onClick={() => removeFromCart(item.id, item.size)}
-                className="remove-btn"
-              >
+              <span className="item-price">Price: ${(item.price * item.quantity).toFixed(2)}</span>
+              <button onClick={() => removeFromCart(item.id, item.size)} className="remove-btn">
                 Remove
               </button>
             </div>
