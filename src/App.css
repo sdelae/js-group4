@@ -87,16 +87,21 @@
   z-index: 999;
 }
 
-/* ... previous styles ... */
-
-/* Cart Item Styling */
 .cart-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr auto; /* Adjust as needed for name, size, quantity, price, and remove button */
   align-items: center;
+  gap: 10px;
   padding: 10px;
-  margin-bottom: 10px;
-  background: #f7f7f7;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item span {
+  margin: 0;
+}
+
+.cart-item button {
+  justify-self: end;
 }
 
 .item-details {
@@ -115,9 +120,9 @@
 
 /* Styling for each part of the item description (size, quantity, price) */
 .item-description {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* for label: value pairs */
+  gap: 5px; /* Adjust gap to your preference */
 }
 
 /* This class is for the text labels of Size, Quantity, and Price */
@@ -126,12 +131,12 @@
   margin-bottom: 4px; /* Space between the label and the value */
 }
 
-/* Cart Summary Styling */
 .cart-summary {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 1.2em;
 }
 
 /* Style for the total price label and amount */
@@ -139,19 +144,15 @@
   font-weight: bold;
 }
 
-/* Styling for the cart action buttons (Empty Cart, Close) */
 .cart-actions {
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
-.empty-cart-btn {
-  padding: 10px;
-  margin-right: 8px; /* Adjust the space between buttons */
-  background-color: #dc3545; /* Bootstrap's danger color for example */
-  color: white;
-  border: none;
-  border-radius: 4px;
+.cart-summary .empty-cart-btn {
+  padding: 10px 20px; /* Add more padding for better appearance */
+  margin-left: auto; /* Push the button to the right */
 }
 
 .close-cart-btn {
@@ -183,4 +184,20 @@
   padding: 6px 12px;
   cursor: pointer;
   flex-shrink: 0; /* Ensures that the button doesn't shrink */
+  justify-self: end;
+}
+
+.total-and-empty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.empty-cart-btn, .close-cart-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
