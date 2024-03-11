@@ -17,9 +17,9 @@ function Cart({ cart, removeFromCart, emptyCart }) {
             <div key={`${item.id}_${item.size || 'default'}`} className="cart-item">
               <span className="item-name">{item.name}</span>
               {item.size ? (
-                <span className="item-size">{item.size}</span>
+                <span className="item-size">Size: {item.size}</span>
               ) : (
-                <span className="item-size-empty">Size:</span> // This ensures the grid layout maintains its structure
+                <span className="item-size-empty"></span> // This ensures the grid layout maintains its structure
               )}
               <span className="item-quantity">Quantity: {item.quantity}</span>
               <span className="item-price">Price: ${(item.price * item.quantity).toFixed(2)}</span>
