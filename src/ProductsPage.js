@@ -145,7 +145,7 @@ const handleAddToCart = (product) => {
             <option value="shirts">Shirts</option>
             </select>
             <span>Sort:</span>
-            <select onChange={handleSortChange} value={sortType} className="select-sort">
+            <select onChange={handleSortChange} value={sortType} className="select-filter">
             <option value="">Default</option>
             <option value="priceLowHigh">Price: Low to High</option>
             <option value="priceHighLow">Price: High to Low</option>
