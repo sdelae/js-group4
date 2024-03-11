@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Cart({ cart, removeFromCart, emptyCart, toggleCart }) {
+function Cart({ cart, removeFromCart, emptyCart }) {
   // Calculate the total price
   const totalPrice = cart.reduce((total, item) => {
     return total + item.price * item.quantity;
@@ -12,7 +12,7 @@ function Cart({ cart, removeFromCart, emptyCart, toggleCart }) {
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <div>
+        <>
           {cart.map((item) => (
             <div key={`${item.id}_${item.size || 'default'}`} className="cart-item">
               <div className="item-details">
@@ -28,8 +28,7 @@ function Cart({ cart, removeFromCart, emptyCart, toggleCart }) {
             <span className="total-price">Total: ${totalPrice}</span>
             <button onClick={emptyCart} className="empty-cart-btn">Empty Cart</button>
           </div>
-          <button onClick={toggleCart} className="close-cart-btn">Close</button>
-        </div>
+        </>
       )}
     </div>
   );
