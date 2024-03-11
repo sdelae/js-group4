@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className="site-header">
       <Link to="/">
-        <img src="/logo_e-commerce.png" alt="Logo" className="logo" />
+        <img src="logo_e-commerce.png" alt="Logo" className="logo" />
       </Link>
       <nav>
         {/* You can add additional navigation links here if needed */}

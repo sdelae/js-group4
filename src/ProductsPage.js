@@ -133,7 +133,6 @@ const handleAddToCart = (product) => {
   return (
     <>
       <Header />
-      <div className="products-header">
         <div className="header-controls">
           <div className="filter-sort-section">
             <span>Filter:</span>
@@ -152,11 +151,10 @@ const handleAddToCart = (product) => {
             <option value="colorRainbow">Color: Rainbow Order</option>
             </select>
           </div>
-          <button onClick={toggleCart} className="cart-bttn">
+          <button onClick={toggleCart} className="cart-button">
             Cart ({cart.length})
           </button>
         </div>
-      </div>
       {isCartVisible && (
         <>
           <div className="overlay" onClick={toggleCart}></div>
