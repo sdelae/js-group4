@@ -1,7 +1,7 @@
 // ProductList.js
 import React from 'react';
 
-function ProductList({ addToCart, inventory, selectedSizes, handleSizeChange }) {
+function ProductList({ addToCart, inventory, selectedSizes, handleSizeChange, handleAddToCart }) {
   return (
     <div className="products-container">
       {inventory.map((product) => (
