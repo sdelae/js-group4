@@ -152,7 +152,7 @@ const handleAddToCart = (product) => {
             <option value="colorRainbow">Color: Rainbow Order</option>
             </select>
           </div>
-          <button onClick={toggleCart} className="button cart-button">
+          <button onClick={toggleCart} className="cart-bttn">
             Cart ({cart.length})
           </button>
         </div>

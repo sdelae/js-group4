@@ -11,7 +11,7 @@
   gap: 10px; /* Space between filter and sort options */
 }
 
-.cart-button:hover {
+.cart-bttn:hover {
   background-color: #0056b3;
 } 
   
@@ -61,12 +61,12 @@
     background-color: #0056b3; /* Darker button color on hover */
   }
   
-  .cart-button-container {
+  .cart-bttn-container {
     display: flex;
     justify-content: flex-end;
   }
   
-  .cart-button {
+  .cart-bttn {
     padding: 0.5rem 1rem;
     background-color: #007bff;
     color: white;
