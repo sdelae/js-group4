@@ -64,6 +64,15 @@
   .product button:hover {
     background-color: #0056b3; /* Darker button color on hover */
   }
+
+.product-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px; /* adjust this value to set the gap between elements */
+  justify-items: center;
+  align-items: center;
+}
+
   
   .cart-button-container {
     display: flex;
