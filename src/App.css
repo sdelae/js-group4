@@ -156,6 +156,23 @@
   margin-left: auto; /* Pushes the button to the right */
 }
 
+.cart-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%; /* You can adjust the width as needed */
+  max-width: 400px; /* Optional: you can set a max-width */
+  height: 100vh; /* Set height to full view height */
+  background: white;
+  box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto; /* Add scroll if content is too long */
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+}
+
+
 .cart-popup .close {
   display: block; /* Show this close button */
 }
