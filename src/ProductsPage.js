@@ -4,6 +4,7 @@ import ProductList from './ProductList';
 import Cart from './cart';
 import Header from './Header';
 import './App.css';
+import './ProductsPage.css';
 
 const rainbowOrder = {
   Red: 1,
