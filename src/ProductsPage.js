@@ -161,7 +161,7 @@ const handleAddToCart = (product) => {
         <>
           <div className="overlay" onClick={toggleCart}></div>
           <div className="cart-popup visible">
-            <Cart cart={cart} removeFromCart={removeFromCart} emptyCart={emptyCart} />
+            <Cart cart={cart} className="empty-cart-btn" removeFromCart={removeFromCart} emptyCart={emptyCart} />
             <button onClick={toggleCart} className="close">Close</button>
           </div>
         </>
